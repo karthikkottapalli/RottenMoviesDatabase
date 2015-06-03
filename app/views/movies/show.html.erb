@@ -1,35 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @movie.title %>
-</p>
+  <p>
+   <b> <%= @movie.title %>   <%= imdb_style_rating_for @movie, current_user %> </b>
+  </p>
+  <p>
+    <%= rating_for @movie, "movie_rating",:disable_after_rate => true, :star => 10, :imdb_avg => true %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @movie.image %>
-</p>
+  <%= link_to 'Edit', edit_movie_path(@movie) %> |
+  <%= link_to 'Back', movies_path %>
 
-<%= imdb_style_rating_for @movie, current_user %>
-
-
-<p>
-  <strong>Rating:</strong>
-  <%= rating_for @movie, "movie_rating",:disable_after_rate => true, :star => 10, :imdb_avg => true %>
-</p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
-
-<%= form_for [@movie, @review] do |f| %>
-  <%= f.text_field :body %>
-  <%= f.text_field :rating %>
-  <%= f.submit %>
-<% end %>
+  <%= form_for [@movie, @review] do |f| %>
+    <%= f.text_field :body %>
+    <%= f.text_field :rating %>
+    <%= f.submit %>
+  <% end %>
 
 
-<% @movie.reviews.each do |review| %>
-  <p><%= review.body %>   ~  <%= current_user.email.split("@").first %>
-</p>
-  <p><%= review.rating %></p>
-<% end %>
+  <% @movie.reviews.each do |review| %>
+    <p><%= review.body %>   ~  <%= current_user.email.split("@").first %>
+  </p>
+    <p><%= review.rating %></p>
+  <% end %>
+</div>
