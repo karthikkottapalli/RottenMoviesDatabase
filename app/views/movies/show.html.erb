@@ -1,9 +1,8 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <p>
-   <b> <%= @movie.title %>   <%= imdb_style_rating_for @movie, current_user %> </b>
-  </p>
+   <b><%= @movie.title %></b>   <%= imdb_style_rating_for @movie, current_user %> 
+      <%= image_tag @movie.photo.url %>
   <p>
     <%= rating_for @movie, "movie_rating",:disable_after_rate => true, :star => 10, :imdb_avg => true %>
   </p>

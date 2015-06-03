@@ -25,7 +25,7 @@ a.active {
     color: #18bc9c;
 }
 
-th, td { width: 800px; height: 55px }
+th, td { width: 700px; height: 55px }
 tbody { display: block; height: 100px; overflow: auto;}
 /* unvisited link */
 a:link {
@@ -141,7 +141,7 @@ header .intro-text .skills {
     }
 
     header .intro-text .skills {
-        font-size: 1.75em;
+        font-size: 3em;
     }
 }
 

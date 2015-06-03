@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602112327) do
+ActiveRecord::Schema.define(version: 20150603062533) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -26,8 +26,12 @@ ActiveRecord::Schema.define(version: 20150602112327) do
     t.string   "title"
     t.string   "image"
     t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "overall_averages", force: :cascade do |t|
